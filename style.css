@@ -1,0 +1,20 @@
+.grid-container {
+  display: grid;
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  margin: 50px auto;
+  grid-template-columns: auto auto auto auto;
+}
+.grid-item {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.mole {
+  background-image: url(./assets/mole.png);
+  transition: all 0.1s ease;
+  top: 100%;
+  background-position: bottom;
+  background-size: 73%;
+}
