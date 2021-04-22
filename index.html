@@ -6,27 +6,35 @@
     <meta name="viewport" content="width=device-width, initi oal-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
 <body>
-    <div class="grid-container">
-        <div id="1" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="2" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="3" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="4" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="5" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="6" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="7" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="8" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="9" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="10" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="11" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="12" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="13" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="14" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="15" class="grid-item" onclick='gridClick(this.id)'></div>
-        <div id="16" class="grid-item" onclick='gridClick(this.id)'></div>
-    </div>
-    <button id="startButton">START</button>
+    <p id='coords'></p> 
+    <div tabindex=1 id="board" style='width:400px;height:400px;
+    background-color:blue;color:white;font-size:128px'>
+     <img id="hammer" class="hammer" src="./hammer.png"/>
+    
+        <div class="grid-container">
+            <div id="1" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="2" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="3" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="4" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="5" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="6" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="7" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="8" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="9" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="10" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="11" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="12" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="13" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="14" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="15" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="16" class="grid-item" onclick='gridClick(this.id)'></div>
+        </div>
+    </div> 
+    <button id="startButton" onclick='setInterval (mole, 1000);'>START</button>
+    <script src="script.js"></script>
 </body>
 </html>
+

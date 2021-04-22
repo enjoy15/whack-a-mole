@@ -3,18 +3,28 @@
   height: 400px;
   width: 400px;
   border: 1px solid black;
-  margin: 50px auto;
+  margin: auto;
   grid-template-columns: auto auto auto auto;
 }
+
 .grid-item {
   text-align: center;
   border: 1px solid black;
 }
 
-.mole {
-  background-image: url(./assets/mole.png);
-  transition: all 0.1s ease;
-  top: 100%;
-  background-position: bottom;
-  background-size: 73%;
+.hammer {
+  width: 50px;
+  height: 50px;
+  position: absolute;
 }
+.down {
+  transform: rotate(30deg);
+}
+
+/* .board {
+  width: 400px;
+  height: 400px;
+  background-color: blue;
+  color: white;
+  font-size: 128px;
+} */
