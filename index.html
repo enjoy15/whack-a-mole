@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initi oal-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+    <h2>Your score:</h2>
+    <h2 id="score">0</h2>
+  
+    <h2>Time Left:</h2>
+    <h2 id="time-left">20</h2>
     <p id='coords'></p> 
+
     <div tabindex=1 id="board" style='width:400px;height:400px;
-    background-color:white;color:white;font-size:128px'>
+    background-color:white;color:yellow;font-size:128px'>
      <img id="hammer" class="hammer" src="./hammer.png"/>
     
         <div class="grid-container">
-            <div id="1" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="2" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="3" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="4" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="5" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="6" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="7" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="8" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="9" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="10" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="11" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="12" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="13" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="14" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="15" class="grid-item" onclick='gridClick(this.id)'></div>
-            <div id="16" class="grid-item" onclick='gridClick(this.id)'></div>
+            <div id="1" class="square"></div>
+            <div id="2" class="square"></div>
+            <div id="3" class="square"></div>
+            <div id="4" class="square"></div>
+            <div id="5" class="square"></div>
+            <div id="6" class="square"></div>
+            <div id="7" class="square"></div>
+            <div id="8" class="square"></div>
+            <div id="9" class="square"></div>
+            <div id="10" class="square"></div>
+            <div id="11" class="square"></div>
+            <div id="12" class="square"></div>
+            <div id="13" class="square"></div>
+            <div id="14" class="square"></div>
+            <div id="15" class="square"></div>
+            <div id="16" class="square"></div>
         </div>
     </div> 
-    <button id="startButton" onclick='setInterval (mole, 1000);'>START</button>
-    <script src="script.js"></script>
+    <button id="startButton" onclick="moveMole(); this.style.display = 'none'">START</button>
+    <script src="script.js" defer></script> 
 </body>
 </html>
 

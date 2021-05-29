@@ -7,7 +7,7 @@
   grid-template-columns: auto auto auto auto;
 }
 
-.grid-item {
+.square{
   text-align: center;
   border: 1px solid black;
 }
@@ -16,9 +16,16 @@
   width: 50px;
   height: 50px;
   position: absolute;
+  pointer-events: none;
 }
+
 .down {
   transform: rotate(30deg);
+}
+
+.mole {
+	background-image: url("mole.jpg");
+	background-size: cover;
 }
 
 /* .board {

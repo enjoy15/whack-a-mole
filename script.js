@@ -4,6 +4,16 @@ const coords=document.getElementById("coords")
 const board=document.getElementById("board")
 const hammer=document.getElementById("hammer")
 
+const squares = document.querySelectorAll('.square')
+const mole = document.querySelector('.mole')
+const timeLeft = document.querySelector('#time-left')
+const score = document.querySelector('#score')
+
+let result = 0
+let hitPosition
+let currentTime = 20
+let timerId = null
+
 board.addEventListener("mousemove",handleMouseMove)
 board.addEventListener("mousedown",handleMouseDown)
 board.addEventListener("mouseup",handleMouseUp)
@@ -16,6 +26,7 @@ function handleMouseMove(e){
 }
 function handleMouseDown(e){
      hammer.classList.add("down")
+     return true
 }
 function handleMouseUp(e){
      hammer.classList.remove("down")            
@@ -24,47 +35,49 @@ function keyUp(e){
      board.innerHTML=e.key
 }
 
-let x = 1; 
 
-function gridClick(id) {
+function randomSquare() {
+  squares.forEach(square => {
+    square.classList.remove('mole')
+    })
+  let randomSquare = squares[Math.floor(Math.random()*15)+1]
 
-    let molePosition = id;
-    alert(molePosition);
+  console.log(randomSquare)
+
+  randomSquare.classList.add('mole')
+
+  hitPosition = randomSquare.id
+  console.log(hitPosition)
+
+  
+  squares.forEach(square => {
+    square.addEventListener('mousedown', () => {
+      if (square.id == hitPosition) {
+        result++
+        score.textContent = result
+        hitPosition = null
+      }
+    console.log("click")  
+    // handleMouseDown()
+    })
+  })
+}
+
+function moveMole() {
+  timerId = setInterval(randomSquare, 1000)
+  countDownTimerId = setInterval(countDown, 1000)
+}
+
+function countDown() {
+  currentTime--
+  timeLeft.textContent = currentTime
+
+  if (currentTime == 0) {
+    clearInterval(countDownTimerId)
+    clearInterval(timerId)
+    alert('GAME OVER! Your final score is ' + result)
+  }
 
 }
 
-function mole(){
-
-    var elem = document.getElementById(x);
-    elem.style.backgroundColor = 'white';    
-    x = Math.floor(Math.random()*15)+1;
-    var elem = document.getElementById(x);
-    elem.style.backgroundColor = 'red';
-
-};
-
-
-// let ids = document.getElementById('grid-item');
-// let startButton = document.getElementById('startButton');
-
-// let start = function() {
-//     ids.style.backgroundColor = 'black';
-//   };
-// //   startButton.onclick = start;
-
-//   startButton.addEventListener('click', start);
-
-// startButton.onclick = setInterval(() => {
-//     //Generate a random number
-//     const random = Math.floor(Math.random() * 16);
-    
-//     const element = document.querySelector('#id');
-//     element.style.color = '#000000'
-
-//   }, 1000);
-
-
-// startButton.onclick = setInterval(function popup(){
-//     var d = new Date();
-//     var n = d.getTime();
-// }, 1000);
+  
